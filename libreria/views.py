@@ -5,7 +5,7 @@ from .models import Libreria
 
 class Listado(View):
     libreria_template = 'libreria/listado.html'
-
+"""
     def get(self,request):
         form = LibreriaForm()
         return render(request, self.libreria_template, {'form': form})
@@ -16,23 +16,27 @@ class Listado(View):
             form.save()
             return redirect('detalles')
         return render(request, self.libreria_template, {'form': form})
+"""
 
 class Detalles(View):
-    confirmacion_template = 'libreria/detalles.html'
-
+    libreria_template = 'libreria/detalles.html'
+"""
     def get(self,request):
         return render(request, self.confirmacion_template)
+"""
 
 class Editar(View):
-    lista_libreria_template = 'libreria/editar.html'
-
+    libreria_template = 'libreria/editar.html'
+"""
     def get(self,request):
         libreria = libreria.objects.all()
         return render(request, self.lista_libreria_template, {'libreria': libreria})
+"""
 
 class Añadir(View):
-    lista_libreria_template = 'libreria/añadir.html'
-
+    libreria_template = 'libreria/añadir.html'
+"""
     def get(self,request):
         libreria = libreria.objects.all()
         return render(request, self.lista_libreria_template, {'libreria': libreria})
+"""
