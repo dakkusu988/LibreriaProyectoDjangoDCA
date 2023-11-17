@@ -10,7 +10,14 @@
     <body style="padding: 20px;">
 
         <h1>Listado de Libros</h1>
-        <a role="button" href="{% url 'añadir' %}"> Crear Nuevo Libro </a>
+
+        {% for libro in libros %}
+            <a href="{% url 'detalles' %}"> {{ libro.title }} </a>
+            {% empty %}
+            <p>No hay libros añadidos</p>
+        {% endfor %}
+
+        <a role="button" href="{% url 'añadir' %}"> Añadir un Libro Nuevo </a>
 
     </body> 
 </html>

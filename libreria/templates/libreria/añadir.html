@@ -9,7 +9,16 @@
 
     <body style="padding: 20px;">
 
-        <h1>Añadir Libro NUEVO</h1>
+        <h1>Añadir un Libro Nuevo</h1>
+
+        <form action= "{% url 'añadir' %}" method="post">
+
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <input type="submit" value="Añadir">
+
+        </form>
 
     </body> 
 </html>
