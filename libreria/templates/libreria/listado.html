@@ -11,10 +11,14 @@
 
         <h1>Listado de Libros</h1>
 
-        {% for libro in libros %}
-            <a href="{% url 'detalles' %}"> {{ libro.title }} </a>
+        {% for libro in object_list %}
+
+            <a href="{% url 'detalles' pk=libro.pk %}"> {{ libro.title }} </a>
+
             {% empty %}
-            <p>No hay libros añadidos</p>
+
+                <p>No hay libros añadidos</p>
+
         {% endfor %}
 
         <a role="button" href="{% url 'añadir' %}"> Añadir un Libro Nuevo </a>

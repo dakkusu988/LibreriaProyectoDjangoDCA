@@ -4,12 +4,18 @@ from .forms import LibreriaForm
 from .models import Libreria
 from django.views.generic import ListView, DetailView
 
+"""
 class Listado(View):
     libreria_template = 'libreria/listado.html'
 
     def get(self,request):
         libros = Libreria.objects.all()
         return render(request, self.libreria_template, {'libros': libros})
+"""
+class Listado(View):
+    model = Libreria
+    template_name = 'libreria/listado.html'
+
     
 class Añadir(View):
     libreria_template = 'libreria/añadir.html'
@@ -24,8 +30,6 @@ class Añadir(View):
             form.save()
             return redirect('listado')
         return render(request, self.libreria_template, {'form': form})
-    
-
 
 class Detalles(View):"""
     libreria_template = 'libreria/detalles.html'
