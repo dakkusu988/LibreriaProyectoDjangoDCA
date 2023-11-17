@@ -22,7 +22,7 @@ class Añadir(View):
         form = LibreriaForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('detalles')
+            return redirect('listado')
         return render(request, self.libreria_template, {'form': form})
     
 
