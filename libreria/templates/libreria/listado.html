@@ -9,19 +9,18 @@
 
     <body style="padding: 20px;">
 
+
         <h1>Listado de Libros</h1>
 
-        {% for libro in object_list %}
+        {% for book in books %}
+            <article>    
 
-            <a href="{% url 'detalles' pk=libro.pk %}"> {{ libro.title }} </a>
+                <p> {{ book.title }} </p>
 
-            {% empty %}
-
-                <p>No hay libros añadidos</p>
-
+            </article>
         {% endfor %}
 
         <a role="button" href="{% url 'añadir' %}"> Añadir un Libro Nuevo </a>
-
-    </body> 
+    
+    </body>
 </html>
